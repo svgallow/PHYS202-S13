@@ -1,9 +1,8 @@
 import numpy as np
-
+k = 8.9875518*10**9 #setting k, q, and d values
+q = 1*10**-9
+d=1
 def pointPotential(x,y,q,posx,posy):
-    k = 8.9875518*10**9 #setting k, q, and d values
-    q = 1*10**-9
-    d=1
     Vyx = (k*q)/(x**2 + y**2)**(1/2.) #insert Vxy function
     return Vyx #return Vxy
 x,y = meshgrid(arange(-2.,2.,0.06),arange(-2.,2.,0.06))
@@ -21,3 +20,5 @@ from mpl_toolkits.mplot3d import Axes3D
 fig = figure()
 ax = fig.gca(projection = '3d')
 p = ax.plot_surface(x,y,Vxy, rstride=1, cstride=1, linewidth=0, cmap=cm.spectral)
+
+
